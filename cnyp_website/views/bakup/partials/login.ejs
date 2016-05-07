@@ -1,0 +1,27 @@
+<div class="container-fluid text-center" ng-app="cnypModule" ng-controller="loginController">
+    <form method="post">
+
+      <div align="center" class="signin_css">
+        <h1>Log In</h1>
+
+        <p>
+          <label for="username">Username:</label>
+          <input type="text" name="username" id="username" ng-model="loginParams.username" placeholder="username" required="true"/>
+        </p>
+        <p>
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" ng-model="loginParams.password" placeholder="password" required="true"/>
+        </p>
+        <div class="buttonDiv">
+          <p>
+            <input type="submit" name="signin" id="signin" value="sign in" class="button" ng-click="authenticateUser(loginParams)"/> 
+            <a href="/signup" title="register" class="button">register</a>
+          </p>
+          <% if (typeof(errorMessage) !== 'undefined') { %>
+            <span style="color:red"><%= errorMessage %></span>
+          <% } %>
+        </div>
+      </div>
+
+    </form>
+</div>
