@@ -22,7 +22,13 @@ angular.module('cnypModule').factory('loginService', function($http, $location, 
 
 				$http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
 				$cookieStore.put('globals', $rootScope.globals);
-			}
+			},
+
+            clearCredentials : function(){
+                $rootScope.globals = {};
+                $cookieStore.remove('globals');
+                $http.defaults.headers.common.Authorization = 'Basic';
+            }
 	}
 }).factory('Base64',function(){
 	  /* jshint ignore:start */

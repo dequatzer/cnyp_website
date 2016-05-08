@@ -1,6 +1,8 @@
 angular.module('cnypModule').controller('loginController', function($scope, loginService, $http,$state,$rootScope){
 	console.log('loginController called'+$scope);
 	
+	loginService.clearCredentials();
+
 	$scope.loginParams = {
 		username : "",
 		password : ""
