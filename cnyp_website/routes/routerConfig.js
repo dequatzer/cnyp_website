@@ -37,6 +37,22 @@ routerConfig.prototype.addRoutes = function(){
 		}
 	});
 
+	self.routeTable.push({
+		requestType : 'get',
+		requestUrl : '/login',
+		callbackFunction : function(req, res, next){
+			res.render('layout', {title:'Welcome'});
+		}
+	});
+
+	self.routeTable.push({
+		requestType : 'get',
+		requestUrl : '/profile',
+		callbackFunction : function(req, res, next){
+			res.render('layout', {title:'Welcome'});
+		}
+	});
+
 
 	self.routeTable.push({
 		requestType : 'get',
