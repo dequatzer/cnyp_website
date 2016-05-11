@@ -53,16 +53,16 @@
             <li><a class="class1" href="#contact">CONTACT</a></li>
           
           
-              <li ng-hide="globals.currentUser.loginStatus">
-                    
+              <li ng-hide="globals.currentUser.loginStatus">    
                 <a class="class2" ui-sref="login">LOGIN/SIGNUP<span class="glyphicon glyphicon-log-in"></span></a>
-                 
               </li>
 
               <li ng-show="globals.currentUser.loginStatus">
-                    
+                 <a class="class2" ui-sref="profile">PROFILE</a>  
+              </li>  
+
+              <li ng-show="globals.currentUser.loginStatus">
                 <a class="class2" ui-sref="login">LOGOUT<span class="glyphicon glyphicon-log-in"></span></a>
-                 
               </li>
            
            

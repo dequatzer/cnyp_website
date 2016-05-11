@@ -8,12 +8,12 @@ var cnypModule = angular.module('cnypModule',['ui.router', 'ngCookies']).config(
 		templateUrl : '/partials/home'
 
 	}).state('login', {
-		url : '/login/',
+		url : '/login',
 		templateUrl : '/partials/login',
 		controller : 'loginController'
 
 	}).state('profile', {
-		url : '/profile/',
+		url : '/profile',
 		templateUrl : '/partials/profile',
 		controller : 'profileController'
 
