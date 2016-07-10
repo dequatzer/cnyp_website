@@ -20,6 +20,8 @@
     <script type="text/javascript" src="../../js/loginController.js"></script>
     <script type="text/javascript" src="../../js/profileController.js"></script>
     <script type="text/javascript" src="../../js/loginService.js"></script>
+    <script type="text/javascript" src="../../js/registerController.js"></script>
+    <script type="text/javascript" src="../../js/homeController.js"></script>
 
 
     <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
@@ -27,11 +29,16 @@
     <link href='https://fonts.googleapis.com/css?family=Vidaloka' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-  <style>
- 
-  </style>
+     <style>
+        .error-message {
+          color: red;
+        }
+        input.ng-dirty.ng-invalid {
+          border-color: red;
+        }
+    </style>
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="60">
  
   <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -42,15 +49,15 @@
             <span class="icon-bar"></span> 
 
           </button>
-          <a class="navbar-brand" href="/">Chotanagpur Youth Pune</a>
+          <a class="navbar-brand class1" ui-sref="#home">Chotanagpur Youth Pune</a>
          
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
-            <li><a class="class1" href="#about">ABOUT</a></li>
-            <li><a class="class1" href="#events">EVENTS</a></li>
-            <li><a class="class1" href="#gallery">GALLERY</a></li>
-            <li><a class="class1" href="#contact">CONTACT</a></li>
+            <li><a class="class1" ui-sref="#about">ABOUT</a></li>
+            <li><a class="class1" ui-sref="#events">EVENTS</a></li>
+            <li><a class="class1" ui-sref="#gallery">GALLERY</a></li>
+            <li><a class="class1" ui-sref="#contact">CONTACT</a></li>
           
           
               <li ng-hide="globals.currentUser.loginStatus">    

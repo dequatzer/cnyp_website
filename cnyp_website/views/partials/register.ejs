@@ -1,0 +1,43 @@
+<div class="container-fluid text-center">
+    <form name="registerForm" novalidate ng-submit="registerUser()">
+
+      <div align="center" class="register-css">
+        <h1>Register</h1>
+
+        <p>
+          <label for="username">Username:</label>
+          <input type="text" name="username" id="username" ng-model="loginParams.username" placeholder="username" ng-required="true" ng-minlength="2"/>
+          <span class="error-message" ng-show="registerForm.username.$dirty && registerForm.username.$error.required">Username is Mandatory</span>
+          <span class="error-message" ng-show="registerForm.username.$dirty && registerForm.username.$error.minlength">Username should be minimum 2 characters</span>
+        </p>
+        <p>
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" ng-model="loginParams.password" placeholder="password" required="true"/>
+        </p>
+         <p>
+          <label for="re_password">Re-enter Password:</label>
+          <input type="password" name="re_password" id="re_password" ng-model="loginParams.re_password" placeholder="password" required="true"/>
+        </p>
+         <p>
+          <label for="firstName">First Name:</label>
+          <input type="text" name="firstName" id="firstName" ng-model="loginParams.firstName" placeholder="firstName" required="true"/>
+        </p>
+        <p>
+          <label for="lastName">Last Name:</label>
+          <input type="text" name="lastName" id="lastName" ng-model="loginParams.lastName" placeholder="lastName" required="true"/>
+        </p>
+         <p>
+          <label for="emailID">Email ID:</label>
+          <input type="text" name="emailID" id="emailID" ng-model="loginParams.emailID" placeholder="emailID" required="true"/>
+        </p>
+        <div class="buttonDiv">
+          <p>
+            <input type="submit" name="register" id="register" value="Register" class="button"/> 
+            <a href="/login" title="register" class="button">Already a member?Sign-In</a>
+          </p>
+           {{errorLoginMessage}}
+        </div>
+      </div>
+
+    </form>
+</div>

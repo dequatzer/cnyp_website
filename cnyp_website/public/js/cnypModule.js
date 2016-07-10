@@ -3,9 +3,10 @@
 var cnypModule = angular.module('cnypModule',['ui.router', 'ngCookies']).config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	$urlRouterProvider.otherwise('/');
 
-	$stateProvider.state('home', {
+	$stateProvider.state('#home', {
 		url : '/',
-		templateUrl : '/partials/home'
+		templateUrl : '/partials/home',
+		controller : 'homeController'
 
 	}).state('login', {
 		url : '/login',
@@ -17,6 +18,30 @@ var cnypModule = angular.module('cnypModule',['ui.router', 'ngCookies']).config(
 		templateUrl : '/partials/profile',
 		controller : 'profileController'
 
+	}).state('register',{
+		url : '/register',
+		templateUrl : '/partials/register',
+		controller : 'registerController'
+
+	}).state('#about',{
+		url : '/about',
+		templateUrl : '/partials/home',
+		controller : 'homeController'
+
+	}).state('#events',{
+		url : '/events',
+		templateUrl : '/partials/home',
+		controller : 'homeController'
+
+	}).state('#gallery',{
+		url : '/gallery',
+		templateUrl : '/partials/home',
+		controller : 'homeController'
+
+	}).state('#contact',{
+		url : '/contact',
+		templateUrl : '/partials/home',
+		controller : 'homeController'
 	});
 
 	$locationProvider.html5Mode({
