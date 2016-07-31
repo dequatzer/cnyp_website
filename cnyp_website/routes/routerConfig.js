@@ -160,6 +160,22 @@ routerConfig.prototype.addRoutes = function(){
 							    })(req,res,next);
 							}
 	});
+    
+    self.routeTable.push({
+		requestType : 'post',
+		requestUrl : '/createProfile',
+		callbackFunction : function(req, res){
+			
+			//console.log("req >>"+req.productCategory.categoryName);
+			console.log("req >>"+req.body);
+			var productCategoryDao = require('../database/Dao/productCategoryDao.js');
+			
+			productCategoryDao.productCategoryDao.createProfile(req.body,function(status){
+				res.json(status);
+				console.log(status);
+			});
+		}
+	});
 
 }
 

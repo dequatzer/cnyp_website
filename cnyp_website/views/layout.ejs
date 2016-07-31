@@ -21,6 +21,7 @@
     <script type="text/javascript" src="../../js/profileController.js"></script>
     <script type="text/javascript" src="../../js/loginService.js"></script>
     <script type="text/javascript" src="../../js/registerController.js"></script>
+    <script type="text/javascript" src="../../js/registerService.js"></script>
     <script type="text/javascript" src="../../js/homeController.js"></script>
 
 
@@ -38,8 +39,7 @@
         }
     </style>
 </head>
-<body id="home" data-spy="scroll" data-target=".navbar" data-offset="60">
- 
+<body id="home" data-spy="scroll" data-target="#myNavbar" data-offset="60">
   <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -54,14 +54,14 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
-            <li><a class="class1" ui-sref="#about">ABOUT</a></li>
-            <li><a class="class1" ui-sref="#events">EVENTS</a></li>
-            <li><a class="class1" ui-sref="#gallery">GALLERY</a></li>
-            <li><a class="class1" ui-sref="#contact">CONTACT</a></li>
+            <li><a class="class1"  ui-sref="#about">ABOUT</a></li>
+            <li><a class="class1"  ui-sref="#events">EVENTS</a></li>
+            <li><a class="class1"  ui-sref="#gallery">GALLERY</a></li>
+            <li><a class="class1"  ui-sref="#contact">CONTACT</a></li>
           
           
               <li ng-hide="globals.currentUser.loginStatus">    
-                <a class="class2" ui-sref="login">LOGIN/SIGNUP<span class="glyphicon glyphicon-log-in"></span></a>
+                <a class="class2" ui-sref="login">LOGIN/REGISTER<span class="glyphicon glyphicon-log-in"></span></a>
               </li>
 
               <li ng-show="globals.currentUser.loginStatus">
