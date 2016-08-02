@@ -10,6 +10,10 @@ angular.module('cnypModule').factory('registerService', function($http, $locatio
                     emailID : userInfo.emailID
 				}
 				return $http.post('/createProfile',data);
-			}
+			},
+        
+            fetchProfileInfo : function(userId){
+                return $http.get('/fetchUserProfile/'+userId);
+            }
 	}
 });

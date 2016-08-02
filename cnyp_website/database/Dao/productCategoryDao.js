@@ -43,6 +43,20 @@ var productCategoryDao = {
 
 	},
     
+    
+    fetchUserProfile : function(userId,callback){
+		var connection = connectionProvider.mysqlConnectionStringProvider.getMySqlConnection();
+		var queryStatement = "Select * from cnyp_profiles where id=?";
+		if(connection){
+			connection.query(queryStatement,[userId], function(err, rows, fields){
+				if(err){console.log(err);throw err;}
+				callback(rows);
+			});
+
+			connectionProvider.mysqlConnectionStringProvider.closeMySqlConnection(connection);
+		}
+	},
+    
     createProfile : function(userInformation, callback){
     
         var insertStatement = "Insert into cnyp_login SET?";
@@ -58,7 +72,7 @@ var productCategoryDao = {
             connection.query(insertStatement,userInfo,function(err,result){
                 if(err){console.log(err)}
                 
-                console.log(result);
+                //console.log(result);
                
                 var userID =  result.insertId;
                 
@@ -74,45 +88,15 @@ var productCategoryDao = {
                     if(connection){
                          connection.query(insertProfileInfo,profileInfo,function(err,result1){
                                 if(err){console.log(err)}
-                                console.log(result1);
+                                //console.log(result1);
                                 callback({status : 'Registration Successfull!!!'});
                          });
 
                          connectionProvider.mysqlConnectionStringProvider.closeMySqlConnection(connection);
                     }      
             });
-        }
-      
-        
-        
-        
-       
+        }  
     }
-    
-   /*    
-   createProfileInfo : function(userInformation,userID, callback){
-    
-        var insertProfileInfo = "Insert into cnyp_profiles SET?";
-
-        var profileInfo = {
-            id : userID,
-            first_name : userInformation.firstName,
-            last_name : userInformation.lastName,
-            email_id : userInformation.emailID
-        }
-        
-        var connection = connectionProvider.mysqlConnectionStringProvider.getMySqlConnection();
-
-        if(connection){
-             connection.query(insertProfileInfo,profileInfo,function(err,result1){
-                    if(err){console.log(err)}
-                    console.log(result1);
-             });
-            
-             connectionProvider.mysqlConnectionStringProvider.closeMySqlConnection(connection);
-        }
-    }
-    */
 };
 
 

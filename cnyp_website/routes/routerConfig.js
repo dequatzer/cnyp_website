@@ -59,7 +59,7 @@ routerConfig.prototype.addRoutes = function(){
 		requestUrl : '/partials/:name',
 		callbackFunction : function(req, res){
 			var name = req.params.name;
-			console.log("name "+name);
+			//console.log("name "+name);
 			if(name === 'profile')
 			{
 				
@@ -122,43 +122,43 @@ routerConfig.prototype.addRoutes = function(){
 		requestType : 'post',
 		requestUrl : '/authenticateUser',
 		callbackFunction : function(req, res, next) {
-							    passport.authenticate('local',
-							    { successRedirect: '/partials/profile',
-							      failureRedirect : '/partials/login',
-							      failureFlash : true
-							    },
-							    function (err, user, info) {
-							       console.log("err "+ err);
-							       console.log("user "+ user);
-							       console.log("info "+ info);
-							      if(err){
-							      		console.log('1');
-							      		return res.send({status : "LOGIN_FAIL"});
-							          //return res.render('partials/login',{title:'Sign In',errorMessage:err.message});
-							      }
-							      if (!user) {
-							      	  console.log('2');
-							      	  return res.send({status : "LOGIN_FAIL"});
-							          //return res.render('partials/login',{data : "failure"} );
-							          //return res.redirect('/');
-							         
-							      }
-							      return req.logIn(user, function(err){
-							          if (err) {
-							          		console.log('3');
-							          		return res.send({status : "LOGIN_FAIL"});
-							              //return res.render('partials/login', {title:'Sign In', errorMessage:err.message});
-							              
-							          }else{
-							          		console.log('4' + user.id);
-							          		return res.send({status : "LOGIN_PASS", uid : user.id});
-							              //return res.redirect('/partials/profile');
+            passport.authenticate('local',
+            { successRedirect: '/partials/profile',
+              failureRedirect : '/partials/login',
+              failureFlash : true
+            },
+            function (err, user, info) {
+               console.log("err "+ err);
+               console.log("user "+ user);
+               console.log("info "+ info);
+              if(err){
+                    console.log('1');
+                    return res.send({status : "LOGIN_FAIL"});
+                  //return res.render('partials/login',{title:'Sign In',errorMessage:err.message});
+              }
+              if (!user) {
+                  console.log('2');
+                  return res.send({status : "LOGIN_FAIL"});
+                  //return res.render('partials/login',{data : "failure"} );
+                  //return res.redirect('/');
 
-							              //return res.render('profile', {title:'Profile Page', errorMessage:err.message})
-							          }
-							      });
-							    })(req,res,next);
-							}
+              }
+              return req.logIn(user, function(err){
+                  if (err) {
+                        console.log('3');
+                        return res.send({status : "LOGIN_FAIL"});
+                      //return res.render('partials/login', {title:'Sign In', errorMessage:err.message});
+
+                  }else{
+                        console.log('4' + user.id);
+                        return res.send({status : "LOGIN_PASS", uid : user.id});
+                      //return res.redirect('/partials/profile');
+
+                      //return res.render('profile', {title:'Profile Page', errorMessage:err.message})
+                  }
+              });
+            })(req,res,next);
+        }
 	});
     
     self.routeTable.push({
@@ -167,13 +167,28 @@ routerConfig.prototype.addRoutes = function(){
 		callbackFunction : function(req, res){
 			
 			//console.log("req >>"+req.productCategory.categoryName);
-			console.log("req >>"+req.body);
+			//console.log("req >>"+req.body);
 			var productCategoryDao = require('../database/Dao/productCategoryDao.js');
 			
 			productCategoryDao.productCategoryDao.createProfile(req.body,function(status){
 				res.json(status);
-				console.log(status);
+				//console.log(status);
 			});
+		}
+	});
+  
+    
+    self.routeTable.push({
+		requestType : 'get',
+		requestUrl : '/fetchUserProfile/:userId',
+		callbackFunction : function(req, res){
+			var productCategoryDao = require('../database/Dao/productCategoryDao.js');
+			productCategoryDao.productCategoryDao.fetchUserProfile(req.params.userId,
+				function(profileInfo){
+					console.log("ProfileInfo"+profileInfo[0].first_name);
+                   
+					res.json({profileInfo : profileInfo});
+				});
 		}
 	});
 

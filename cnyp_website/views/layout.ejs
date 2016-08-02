@@ -61,7 +61,12 @@
           
           
               <li ng-hide="globals.currentUser.loginStatus">    
-                <a class="class2" ui-sref="login">LOGIN/REGISTER<span class="glyphicon glyphicon-log-in"></span></a>
+                <a class="class2" ui-sref="login">LOGIN</a>
+              </li>
+              
+              
+              <li ng-hide="globals.currentUser.loginStatus">    
+                <a class="class2" ui-sref="register">REGISTER</a>
               </li>
 
               <li ng-show="globals.currentUser.loginStatus">
@@ -80,7 +85,7 @@
 
     <div class="jumbotron text-center">
       <img id="mainLogo" src="../../img/logo_old.jpg">
-      <h1>Chotanagpur Youth Pune</h2>
+      <h1>Chotanagpur Youth Pune</h1>
       <p>...a helping hand</p>
     </div>
 

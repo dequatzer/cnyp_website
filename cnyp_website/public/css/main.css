@@ -43,11 +43,29 @@ input[type="submit"]{
   }
 
   .jumbotron {
-      background-color: #caff70;
-      color: #000;
-      padding: 50px 25px;
-      font-family: 'Raleway', sans-serif;
+        background-color: #b5e564; 
+        color: #000;
+        padding: 50px 25px;
+        font-family: 'Lato', sans-serif;
+        background-image: url('../img/header_img.jpeg');
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position:bottom right;
   }
+
+.jumbotron h1{
+    text-align: center;
+    margin-right: 150px;
+    color:#75188A;
+    text-shadow: 2px 2px #A1CC59;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.jumbotron p{
+    text-align: center;
+    margin-right: 100px;
+}
   .container-fluid {
       padding: 60px 50px;
   }
@@ -95,7 +113,7 @@ input[type="submit"]{
   
   .navbar {
       margin-bottom: 0;
-      background-color: #caff70;
+      background-color: #a1cc59;
       z-index: 9999;
       border: 0;
       font-size: 12px !important;
@@ -107,6 +125,7 @@ input[type="submit"]{
   .navbar li a, .navbar .navbar-brand {
       color: #000 !important;
   }
+    
   .navbar-nav li a:hover, .navbar-nav li.active a {
       color: #000 !important;
       background-color: #fff !important;
@@ -128,6 +147,11 @@ input[type="submit"]{
       -webkit-animation-duration: 1s;
       visibility: visible;      
   }
+
+#about{
+    padding-top: 0;
+}
+
   @keyframes slide {
     0% {
       opacity: 0;
