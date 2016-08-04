@@ -12,7 +12,10 @@ angular.module('cnypModule').controller('registerController', function($scope,re
                console.log(data.status);
                $scope.message = data.status;
                console.log("Profile Created Successfully");
-               $state.go('login');
+               //  $('#rgstrModal').modal('hide');
+            //     $('#loginModal').modal('show');
+                
+               //$state.go('login');
             });
 		}else{
 			console.log('Unable to save user. Validation error');

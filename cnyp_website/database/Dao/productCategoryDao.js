@@ -89,7 +89,7 @@ var productCategoryDao = {
                          connection.query(insertProfileInfo,profileInfo,function(err,result1){
                                 if(err){console.log(err)}
                                 //console.log(result1);
-                                callback({status : 'Registration Successfull!!!'});
+                                callback({status : 'Registration Successfull! Login to view your profile page.'});
                          });
 
                          connectionProvider.mysqlConnectionStringProvider.closeMySqlConnection(connection);

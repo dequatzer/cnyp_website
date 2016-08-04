@@ -6,7 +6,7 @@ var cnypModule = angular.module('cnypModule',['ui.router', 'ngCookies']).config(
 	$stateProvider.state('#home', {
 		url : '/',
 		templateUrl : '/partials/home',
-		controller : 'homeController'
+		controller : 'mainController'
 
 	}).state('login', {
 		url : '/login',

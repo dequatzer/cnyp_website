@@ -11,13 +11,14 @@ angular.module('cnypModule').controller('loginController', function($scope, logi
 	$scope.authenticateUser = function(loginParams){
 		loginService.authenticateUser(loginParams).success(function(response){
 			
-			console.log("response "+response);
-			console.log("response "+response.status);
+			//console.log("response "+response);
+			//console.log("response "+response.status);
 			if(response.status == "LOGIN_FAIL"){
-				$state.go('login');
+				//$state.go('login');
 				$scope.errorLoginMessage = "Invalid username or password";
 			}
 			if(response.status == "LOGIN_PASS"){
+                $('#loginModal').modal('hide');
 				loginService.setCredentials($scope.loginParams.username,$scope.loginParams.password,response.uid,true);
 				$state.go('profile');
 			}
@@ -25,7 +26,7 @@ angular.module('cnypModule').controller('loginController', function($scope, logi
 		}).error(function(response){
 			console.log("Error Occurred");
 			$scope.errorLoginMessage = response;
-			$state.go('login');
+			//$state.go('login');
 		});
 	}
 

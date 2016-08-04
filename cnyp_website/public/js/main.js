@@ -1,6 +1,10 @@
 
 
 $(document).ready(function(){
+    
+$('body').on('hidden',function(){
+    $(this).removeData('modal');
+});    
 
 $('.class1').on('click', function(event) {
     var target = $( $(this).attr('ui-sref') );
@@ -24,4 +28,4 @@ $('.class1').on('click', function(event) {
         }
     });
   });
-})
+});

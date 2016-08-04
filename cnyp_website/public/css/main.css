@@ -34,6 +34,10 @@ input[type="submit"]{
     color: red;
 }
 
+.buttonDiv p:last-child{
+    color: green;
+}
+
   #mainLogo{
     float: left;
     width: 13%;
@@ -150,6 +154,20 @@ input[type="submit"]{
 
 #about{
     padding-top: 0;
+}
+
+#loginModal,#rgstrModal {
+    padding-top: 40px;
+}
+
+.modal-header{
+    background-color:#caff70;
+    border-top-left-radius:inherit;
+    border-top-right-radius:inherit
+}
+
+.class2{
+    cursor: pointer;
 }
 
   @keyframes slide {
