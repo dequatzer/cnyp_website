@@ -8,22 +8,22 @@ var methodOverride = require('method-override');
 var bcrypt = require('bcrypt-nodejs');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var productCategoryDao = require('./database/Dao/productCategoryDao.js');
+var cnypMasterDao = require('./database/Dao/cnypMasterDao.js');
 
 var app = express();
 
 
 passport.use(new LocalStrategy(function(username,password,done){
     //console.log('username'+username);  console.log('password'+password);
-    productCategoryDao.productCategoryDao.authenticateUser(username,password,
+    cnypMasterDao.cnypMasterDao.authenticateUser(username,password,
                 function(data){
                    
-                     console.log("data "+data);
+                     //console.log("data "+data);
                      var user = data[0];
-                        console.log("user + "+ user);
+                        //console.log("user + "+ user);
                         if (user === null || data == "") {
                             //console.log("Could not find any username "+data);
-                            return done(null, false, {message: 'Invalid username or password'});
+                            return done(null, false, {message: 'Invalid usernames or password'});
                         }else {
                            
                             // user = data.toJSON;
@@ -54,12 +54,13 @@ passport.serializeUser(function(user,done){
 
 passport.deserializeUser(function(id,done){
     //console.log("app.js -> user -> "+id);
-    productCategoryDao.productCategoryDao.getUserById(id,
+	console.log('  >>before getUserById');
+    cnypMasterDao.cnypMasterDao.getUserById(id,
                 function(data){
         done(null,data);
     }); 
 });
-console.log('__dirname ='+__dirname);
+//console.log('__dirname ='+__dirname);
 app.set('views', path.join(__dirname, 'views'));
 //app.set('/partials/', path.join(__dirname, '/views/partials/'));
 app.set('view engine', 'ejs');

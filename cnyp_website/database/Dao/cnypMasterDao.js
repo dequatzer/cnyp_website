@@ -1,20 +1,21 @@
 var connectionProvider = require('../mysqlConnectionStringProvider.js');
 
-var productCategoryDao = {
+var cnypMasterDao = {
 
 	authenticateUser : function(userId,password,callback){
 		var connection = connectionProvider.mysqlConnectionStringProvider.getMySqlConnection();
 		
-		//console.log("userId here"+userId);
+		
 
 		var queryStatement = "Select * from cnyp_login where username=?";
 		
 		if(connection){
+			
 			connection.query(queryStatement,[userId], function(err, rows, fields){
 				
 				if(err){throw err;}
-
-				console.log("rows "+rows);
+				console.log("  >>authenticateUser");
+				//console.log("rows "+rows);
 				callback(rows);
 			});
 
@@ -25,15 +26,16 @@ var productCategoryDao = {
 	getUserById : function(userId,callback){
 		var connection = connectionProvider.mysqlConnectionStringProvider.getMySqlConnection();
 
-		//console.log('userId there'+userId);
+		
 
 		var queryStatement = "Select * from cnyp_login where id=?";
 
 		if(connection){
+			
 			connection.query(queryStatement,[userId], function(err, rows, fields){
 				
 				if(err){throw err;}
-
+				console.log('  >>getUserById');
 				//console.log("rows "+rows);
 				callback(rows);
 			});
@@ -45,11 +47,14 @@ var productCategoryDao = {
     
     
     fetchUserProfile : function(userId,callback){
+		
 		var connection = connectionProvider.mysqlConnectionStringProvider.getMySqlConnection();
 		var queryStatement = "Select * from cnyp_profiles where id=?";
 		if(connection){
+			
 			connection.query(queryStatement,[userId], function(err, rows, fields){
 				if(err){console.log(err);throw err;}
+				console.log('  >>fetchUserProfile');
 				callback(rows);
 			});
 
@@ -100,4 +105,4 @@ var productCategoryDao = {
 };
 
 
-module.exports.productCategoryDao = productCategoryDao;
+module.exports.cnypMasterDao = cnypMasterDao;

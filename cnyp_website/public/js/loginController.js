@@ -1,7 +1,5 @@
 angular.module('cnypModule').controller('loginController', function($scope, loginService, $http,$state,$rootScope){
 	console.log('loginController called'+$scope);
-	
-	loginService.clearCredentials();
 
 	$scope.loginParams = {
 		username : "",
@@ -10,9 +8,9 @@ angular.module('cnypModule').controller('loginController', function($scope, logi
 
 	$scope.authenticateUser = function(loginParams){
 		loginService.authenticateUser(loginParams).success(function(response){
-			
-			//console.log("response "+response);
-			//console.log("response "+response.status);
+			//clearing the user info stored in  cookies
+			loginService.clearCredentials();
+
 			if(response.status == "LOGIN_FAIL"){
 				//$state.go('login');
 				$scope.errorLoginMessage = "Invalid username or password";

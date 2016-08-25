@@ -3,7 +3,7 @@ var mysqlConnectionString = {
 	connection : {
 
 		dev : {
-			host: 'localhost',
+			host: '127.0.0.1',
 			user : 'root',
 			password : 'tcsaug13',
 			database : 'cnyp_master'

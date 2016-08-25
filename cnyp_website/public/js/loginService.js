@@ -4,13 +4,14 @@ angular.module('cnypModule').factory('loginService', function($http, $location, 
 			authenticateUser : function(loginParams){
 				var data = {
 					username : loginParams.username,
-					password : loginParams.password
+					password : Base64.encode(loginParams.password)
 				}
 				return $http.post('/authenticateUser',data);
 			},
 
 			setCredentials : function(username,password,uid,loginStatus){
 				var authdata = Base64.encode(username + ':' + password);
+				//console.log("setting credentials "+uid);
 				$rootScope.globals = {
 					currentUser: {
                         uid : uid,

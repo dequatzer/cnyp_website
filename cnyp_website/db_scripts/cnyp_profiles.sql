@@ -1,13 +1,3 @@
-
-create table cnyp_login (
-	id INT NOT NULL auto_increment,
-    username VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL,
-    PRIMARY KEY (id)
-) ENGINE=INNODB
-
-
-
 CREATE TABLE cnyp_profiles (
   `profile_id` int(20) NOT NULL auto_increment,
   `id` int(20) NOT NULL ,

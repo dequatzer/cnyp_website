@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../../js/registerService.js"></script>
     <script type="text/javascript" src="../../js/homeController.js"></script>
     <script type="text/javascript" src="../../js/mainController.js"></script>
-
+	<script type="text/javascript" src="../../js/logoutController.js"></script>
 
     <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
@@ -75,7 +75,7 @@
               </li>  
 
               <li ng-show="globals.currentUser.loginStatus">
-                <a class="class2" ui-sref="#home">LOGOUT<span class="glyphicon glyphicon-log-in"></span></a>
+                <a class="class2" ui-sref="#logout" ng-click="logout()"><span class="glyphicon glyphicon-log-in"></span>LOGOUT</a>
               </li>
            
            
