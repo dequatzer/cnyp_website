@@ -4,5 +4,6 @@ var app = require('./app');
 var port = 8080;
 app.set('port', port);
 var server = http.createServer(app);
-server.listen(port);
-console.log('Server started at localhost:'+port);
+server.listen(process.env.PORT || port, function(){
+	console.log('listening on', http.address().port);
+});
