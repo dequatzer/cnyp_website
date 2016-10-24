@@ -170,6 +170,20 @@ input[type="submit"]{
     cursor: pointer;
 }
 
+#slides_control {
+   width:80%;
+   align:center;
+   margin-left:10%;
+   margin-right:10%;
+}
+img{
+  margin:auto;
+  width: 100%;
+}
+#slideImage {
+  width: 75%;
+}
+
   @keyframes slide {
     0% {
       opacity: 0;

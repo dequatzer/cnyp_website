@@ -1,6 +1,6 @@
 'use strict'
 
-var cnypModule = angular.module('cnypModule',['ui.router', 'ngCookies']).config(function($stateProvider, $urlRouterProvider, $locationProvider){
+var cnypModule = angular.module('cnypModule',['ui.router', 'ngCookies','ui.bootstrap']).config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	$urlRouterProvider.otherwise('/');
 
 	$stateProvider.state('#home', {

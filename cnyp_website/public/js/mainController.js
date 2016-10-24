@@ -12,5 +12,21 @@ angular.module('cnypModule').controller('mainController', function($rootScope,lo
             scrollTop: target.offset().top
         }, 1000);
     }
+	
+	 $scope.myInterval = 3000;
+	  $scope.slides = [
+			{
+			  image: 'http://drive.google.com/uc?export=view&id=0B5OGdKKKAB0zQzdVNEdWc3ZmR1U'
+			},
+			{
+			  image: 'http://drive.google.com/uc?export=view&id=0B5OGdKKKAB0zYUp4eFBmTWhqR1k'
+			},
+			{
+			  image: 'http://drive.google.com/uc?export=view&id=0B5OGdKKKAB0zNWh6UmFYVWw0LTA'
+			},
+			{
+			  image: 'http://drive.google.com/uc?export=view&id=0B5OGdKKKAB0zYWJ5Y2dkQlNxYTA'
+			}
+	  ];
 
 });

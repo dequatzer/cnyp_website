@@ -15,6 +15,7 @@
      <!-- Angular -->
     <script type="text/javascript"  src="../../libs/angular/angular.js"></script>
     <script type="text/javascript"  src="../../libs/angular-ui-router/release/angular-ui-router.js"></script>
+	<script type="text/javascript"  src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
     <script type="text/javascript"  src="../../libs/angular-cookies/angular-cookies.js"></script>
     <script type="text/javascript" src="../../js/cnypModule.js"></script>
     <script type="text/javascript" src="../../js/loginController.js"></script>
@@ -60,7 +61,7 @@
             <li><a class="class1"  ui-sref="#gallery"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span>GALLERY</a></li>
             <li><a class="class1"  ui-sref="#contact"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>CONTACT</a></li>
           
-          
+            <!-- Commented for now 
               <li ng-hide="globals.currentUser.loginStatus">    
                 <a class="class2" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>LOGIN</a>
               </li>
@@ -77,7 +78,7 @@
               <li ng-show="globals.currentUser.loginStatus">
                 <a class="class2" ui-sref="#logout" ng-click="logout()"><span class="glyphicon glyphicon-log-in"></span>LOGOUT</a>
               </li>
-           
+            -->
            
           </ul>
         </div>
