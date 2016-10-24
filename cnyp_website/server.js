@@ -5,5 +5,5 @@ var port = 8080;
 app.set('port', port);
 var server = http.createServer(app);
 server.listen(process.env.PORT || port, function(){
-	console.log('listening on', http.address().port);
+	console.log('Server started');
 });
