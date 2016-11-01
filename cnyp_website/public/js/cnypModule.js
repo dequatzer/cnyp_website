@@ -43,6 +43,11 @@ var cnypModule = angular.module('cnypModule',['ui.router', 'ngCookies','ui.boots
 		templateUrl : '/partials/home',
 		controller : 'homeController'
 
+	}).state('#video',{
+		url : '/video',
+		templateUrl : '/partials/home',
+		controller : 'homeController'
+
 	}).state('#contact',{
 		url : '/contact',
 		templateUrl : '/partials/home',
